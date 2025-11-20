@@ -13,7 +13,7 @@ def main():
         total = resumen[prov]
         print(f"\t{prov}: ${total:.2f}")
 
-    print("\nCompras para una provincia")
+    print("\nCompras para una provincia:")
     
     provincias_validas = {prov.upper() for prov in resumen.keys()} 
     
@@ -25,6 +25,7 @@ def main():
         provincia = entrada.strip().upper() 
         
         if provincia in provincias_validas:
+            # Convertimos a formato original
             for key in resumen.keys():
                 if key.upper() == provincia:
                     provincia_formateada = key
@@ -49,7 +50,11 @@ def main():
     print("\nProvincia con mayor volumen de importaciones:")
 
     provincia_top = analizador.provincia_mayor_importacion()
-    print(f"\tLa provincia con mayor importación es: {provincia_top.upper()}")
+
+    if provincia_top is None:
+        print("\tNo existen datos de importaciones en el archivo.")
+    else:
+        print(f"\tLa provincia con mayor importación es: {provincia_top.upper()}")
 
 if __name__ == "__main__":
     main()

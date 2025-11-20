@@ -85,3 +85,19 @@ docker-compose.override.yml
 # --- Archivos personalizados del usuario ---
 # (Aquí puedes añadir tus archivos locales que no quieres subir al repositorio)
 # ej. datos.csv, credenciales.json, resultados.xlsx
+# Ignorar entornos virtuales
+venv/
+.venv/
+env/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Directorios de configuración de IDEs
+.vscode/
+.idea/
